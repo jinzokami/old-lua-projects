@@ -1,0 +1,41 @@
+#shader vert
+#version 330 core
+
+in vec2 pos;
+in vec2 tex;
+
+out vec2 texture;
+
+uniform mat4 projectionMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 modelMatrix;
+
+void main()
+{
+    mat4 mvp = projectionMatrix * viewMatrix * modelMatrix;
+    gl_Position = mvp * vec4(pos, 0.0, 1.0);
+}
+#end
+
+#shader frag
+#version 330 core
+
+in vec2 texture;
+
+out vec4 color;
+
+uniform Sampler2D BG1;
+uniform Sampler2D BG2;
+
+void main()
+{
+    if(gl_FragCoord.y % 2 == 0)
+    {
+        texture2D(BG1, texture);
+    }
+    else
+    {
+        texture2D(BG2, texture);
+    }
+}
+#end

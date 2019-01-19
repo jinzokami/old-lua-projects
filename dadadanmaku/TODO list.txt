@@ -1,0 +1,11 @@
+in order of priority
+
+add a simple enemy(moves forward and nothing else)
+add collision detection and response(quadtrees will be VERY useful here)
+collision will be based on distances(every collider will be a cricle)
+start work on the moving background
+start work on the gui
+start work on assets
+brainstorm powerups
+figure out how enemy spawning will work(maybe have timers that spawn enemies just outside of the level)
+work on the sounds of the game
