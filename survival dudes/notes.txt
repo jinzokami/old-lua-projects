@@ -1,0 +1,47 @@
+make a game like survival kids.
+pokemon style movement(locked to a grid but smooth movement)
+harvest sticks and rocks to make tools
+use tools to hunt animals(random encounters)
+use tools to chop down trees break large rocks and cut vines (for better versions of those tools)
+equipment system weapon armor (durability on both)
+hunting and fight is turn based(or not if i still can't figure it out)
+hunger
+thirst
+a goal
+an ending
+saving and loading
+
+not necessary but try
+random worlds
+tiled maps
+
+
+limitations
+screen size is 160x144 (gameboy resolution)
+buttons are analogous to gameboy buttons(a, b, select, start, d-pad)
+use state machines(make smooth movement by using a moving state that the player exits once they've arrived at their destination)
+include a moveTo(destination, rate) function that moves the object smoothly towards a target point
+
+function GameObject:moveTo(destination, rate) -- returns the movement vector args: destination vector, amount to move
+	local arrived = false
+	local posDelta = self.position - destination
+	--we now have a vector that tells us how far we have to go and in what direction
+	
+	local finalDelta = posDelta:getNormalized()
+	
+	finalDelta = finalDelta * rate
+
+	if finalDelta.x > posDelta.x then
+		finalDelta.x = posDelta.x
+	end
+
+	if finalDelta.y > posDelta.y then
+		finalDelta.y = posDelta.y
+	end
+
+	if (finalDelta.x == posDelta.x) and (finalDelta.y == posDelta.y) then
+		arrived = true
+	end
+
+	return finalDelta.x, finalDelta.y, arrived -- returns the dx and dy and whether it has arrived at destination.
+end

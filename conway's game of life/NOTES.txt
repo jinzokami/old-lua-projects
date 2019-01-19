@@ -1,0 +1,2 @@
+this is a slightly repurposed dungeon generator.
+cellular automata is surprisingly versatile and i wish to discover more places it can be used.

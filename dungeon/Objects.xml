@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<objects>
+
+	<entities>
+
+		<player>
+			<name>Bobtest</name>
+			<equip>
+				<head>None</head>
+				<body>None</body>
+				<arms>None</arms>
+				<legs>None</legs>
+			</equip>
+
+			<stats>
+				<attack>10</attack>
+				<defense>5</defense>
+
+				<magic>3</magic>
+				<resistance>5</resistance>
+				
+				<dexterity>4</dexterity>
+				<agility>6</agility>
+			</stats>
+		
+		</player>
+		
+		<enemy>
+			<name>Bobkill</name>
+		</enemy>
+	
+	</entities>
+	
+	<items>
+	
+		<consumable>
+			<name>Potion</name>
+		</consumable>
+		
+		<equipment>
+			<name>Helm of Yngol</name>
+		</equipment>
+	
+	</items>
+
+</objects>

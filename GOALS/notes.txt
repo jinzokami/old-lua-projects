@@ -1,0 +1,28 @@
+write a script (in gamemaker, or whatever) that generates a 2d grid of passable/impassable cells
+use place_meeting and a custom gridchecker object. the object would be of a specified size
+it would start the count at 0,0 (top left corner) and move by the width until it is completely offscreen(or room).
+once offscreen, x is reset to zero(left of screen or room) and y goes up by height.
+continue until y is also offscreen(or room).
+for every move except a reset on the x if the object is touching an impassable object, then add "impassable", or a similar value to the grid.
+if there are no objects or the objects are all passable, then add "passable", or a similar value to the grid
+
+benefits: 
+works for the whole screen (or room)
+gets every part
+can be made more or less accurate on demand
+
+uses:
+dynamically generated minimaps (this is where variable accuracy becomes a benefit)
+pathfinding(again, variable accuracy is useful here)
+deciding if an object would fit in that space(for randomly generating objects after terrain's been generated)
+
+cons:
+requires the creation of an outside object
+could be expensive. WILL BE on larger maps
+aside from pathfinding, very limited usefulness
+
+thoughts:
+generating the grid once on map load and never again could be a good idea
+learn a* pathfinding to maximize usefulness
+
+should return a 2d array of size (ceil(room.width/checker.width), ceil(room.height/checker.height))
